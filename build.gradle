@@ -18,6 +18,19 @@ dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 }
 
+group 'com.algobot76.chelperx'
+version '4.4.2'
+
 intellij {
     version '2018.2'
+}
+
+buildSearchableOptions {
+    enabled = false
+}
+
+patchPluginXml {
+    version = project.version
+    sinceBuild = '203'
+    untilBuild = '212.*'
 }
