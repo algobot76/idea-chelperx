@@ -2,6 +2,7 @@ package net.egork.chelper.configurations;
 
 import com.intellij.compiler.options.MakeProjectStepBeforeRun;
 import com.intellij.execution.BeforeRunTask;
+import com.intellij.execution.configurations.JavaRunConfigurationModule;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.*;

@@ -1,12 +1,23 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '1.2.0'
+    id "org.jetbrains.intellij" version "0.6.5"
 }
-
-group 'org.intellij.sdk'
-version '2.0.0'
-
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.7.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.7.4'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.7.4'
+    implementation 'org.apache.commons:commons-lang3:3.7'
+    implementation 'commons-lang:commons-lang:2.6'
+    implementation 'org.jetbrains:annotations:19.0.0'
+    implementation 'org.json:json:20180130'
+    implementation fileTree(dir: 'lib', include: ['*.jar'])
+}
+
+intellij {
+    version '2018.2'
 }
