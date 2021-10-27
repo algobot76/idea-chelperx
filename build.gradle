@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id "org.jetbrains.intellij" version "0.6.5"
+    id "org.jetbrains.intellij" version "1.2.0"
 }
 
 repositories {
@@ -21,8 +21,11 @@ dependencies {
 group 'com.algobot76.chelperx'
 version '4.4.2'
 
+sourceCompatibility = 11
+
 intellij {
-    version '2018.2'
+    version = '2021.2'
+    plugins = ['com.intellij.java']
 }
 
 buildSearchableOptions {

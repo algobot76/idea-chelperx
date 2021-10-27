@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * @author Egor Kulikov (kulikov@devexperts.com)
  */
-public class TopCoderConfiguration extends ModuleBasedConfiguration<JavaRunConfigurationModule> {
+public class TopCoderConfiguration extends ModuleBasedConfiguration<JavaRunConfigurationModule, JavaCommandLineState> {
     private TopCoderTask configuration;
 
     public TopCoderConfiguration(String name, Project project, TopCoderTask configuration, ConfigurationFactory factory) {
@@ -47,8 +47,8 @@ public class TopCoderConfiguration extends ModuleBasedConfiguration<JavaRunConfi
 
     @NotNull
     @Override
-    public List<BeforeRunTask> getBeforeRunTasks() {
-        List<BeforeRunTask> result = new ArrayList<>(super.getBeforeRunTasks());
+    public List<BeforeRunTask<?>> getBeforeRunTasks() {
+        List<BeforeRunTask<?>> result = new ArrayList<>(super.getBeforeRunTasks());
         result.add(new MakeProjectStepBeforeRun.MakeProjectBeforeRunTask());
         return result;
     }

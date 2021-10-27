@@ -33,7 +33,7 @@ import java.util.*;
 /**
  * @author Egor Kulikov (kulikov@devexperts.com)
  */
-public class TaskConfiguration extends ModuleBasedConfiguration<JavaRunConfigurationModule> {
+public class TaskConfiguration extends ModuleBasedConfiguration<JavaRunConfigurationModule, JavaCommandLineState> {
     private Task configuration;
 
     public TaskConfiguration(String name, Project project, Task configuration, ConfigurationFactory factory) {
@@ -42,10 +42,9 @@ public class TaskConfiguration extends ModuleBasedConfiguration<JavaRunConfigura
         saveConfiguration(configuration);
     }
 
-    @NotNull
     @Override
-    public List<BeforeRunTask> getBeforeRunTasks() {
-        List<BeforeRunTask> result = new ArrayList<>(super.getBeforeRunTasks());
+    public @NotNull List<BeforeRunTask<?>> getBeforeRunTasks() {
+        List<BeforeRunTask<?>> result = new ArrayList<>(super.getBeforeRunTasks());
         result.add(new MakeProjectStepBeforeRun.MakeProjectBeforeRunTask());
         return result;
     }
