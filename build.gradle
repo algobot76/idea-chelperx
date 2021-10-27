@@ -18,22 +18,16 @@ dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 }
 
-group 'com.algobot76.chelperx'
-version '4.4.2'
-
-sourceCompatibility = 11
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
 intellij {
     version = '2021.2'
-    plugins = ['com.intellij.java']
+    plugins = ['java']
 }
 
 buildSearchableOptions {
     enabled = false
-}
-
-patchPluginXml {
-    version = project.version
-    sinceBuild = '203'
-    untilBuild = '212.*'
 }
